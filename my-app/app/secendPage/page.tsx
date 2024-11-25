@@ -5,7 +5,7 @@ const secendPage: React.FC = () => {
   return (
     <main className="flex flex-col h-screen gap-8 items-center justify-start overflow-y-auto">
       <HeaderComponent/>
-      <Link href="/">Back to Home</Link>
+      <Link href="/" className="hover:font-bold italic underline">Back To Home</Link>
 
     </main>
   );

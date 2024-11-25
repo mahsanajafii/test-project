@@ -1,13 +1,17 @@
 "use client";
-import { Menu, MenuProps } from "antd";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MenuOutlined, ProductOutlined, InfoCircleOutlined } from "@ant-design/icons";
+import LogoMenu from "../logoMenu/LogoMenu";
 
-type MenuItem = Required<MenuProps>['items'][number];
+// interface
+interface IMenuItem {
+  label: string;
+  to: string;
+}
 
 const HeaderComponent: React.FC = () => {
   const [bgcolor, setBgColor] = useState("");
-  const [openKeys, setOpenKeys] = useState<string[]>([]);
+  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     const color = localStorage.getItem("backgroundColor");
@@ -18,60 +22,48 @@ const HeaderComponent: React.FC = () => {
     }
   }, []);
 
-  const menuItems: MenuItem[] = [
-    {
-      key: "Menu",
-      label: "Menu",
-      icon: <MenuOutlined />,
-      children: [
-        {
-          key: "about",
-          label: "About-Us",
-          icon: <InfoCircleOutlined />,
-          children: [
-            { key: "1", label: "Phone Number" },
-            { key: "2", label: "Location" },
-          ],
-        },
-        {
-          key: "products",
-          label: "Products",
-          icon: <ProductOutlined />,
-          children: [
-            { key: "3", label: "Medicines" },
-            { key: "4", label: "Clothing" },
-          ],
-        },
-      ],
-    },
+  const menuItems: IMenuItem[] = [
+    { to: "/", label: "Dashboard" },
+    { to: "/", label: "Create-product" },
+    { to: "/", label: "Users" },
+    { to: "/", label: "Orders" },
+    { to: "/", label: "AllProducts" },
   ];
 
-  const onOpenChange = (keys: string[]) => {
-    setOpenKeys(keys);
-  };
-
-  const onClick: MenuProps['onClick'] = (e: Element) => {
-    console.log("click ", e);
+  const handelClick = () => {
+    setIsChecked(!isChecked);
   };
 
   return (
     <>
       <header
-        className="w-full h-28 text-3xl top-0 text-center flex justify-between items-center px-8 overflow-y-visible"
+        className="w-full h-28 text-3xl top-0 text-center flex justify-center items-center px-8 overflow-y-visible"
         style={{ backgroundColor: bgcolor }}
       >
-        <div className="h-10 w-fit zIndex: 10">
-          <Menu
-            onClick={onClick}
-            mode="inline"
-            items={menuItems}
-            openKeys={openKeys}
-            onOpenChange={onOpenChange}
-            inlineCollapsed
-            style={{ width: 40, maxHeight: '200px', height: '40px', overflow: 'visible' ,backgroundColor :"white" }}
-            />
+        <div className={`absolute w-1/6 left-5 top-5 rounded-xl flex z-10`}>
+          <LogoMenu handelClick={() => handelClick()} />
+          <div
+            className={`absolute  top-[2rem] w-56 transition-opacity duration-500 ease-in-out bg-gray-100 border py-6  gap-6 left-[2rem] rounded-xl ${
+              isChecked ? "block " : "hidden"
+            } `}
+          >
+            <div className="flex flex-col transition-width duration-700 ease-in-out justify-around items-start h-full  text-2xl leading-8 font-normal">
+              {menuItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.to}
+                  onClick={() => handelClick()}
+                  className={`transition-width duration-700 ease-in-out gap-4 rounded-lg p-3 cursor-pointer  hover:bg-[#DB277714] text-justifym text-lg  ${
+                    isChecked ? " w-full" : " w-0"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
-            <p className="w-5/6">This Is Header</p>
+        <p className="w-5/6 text-center ">This Is Header</p>
       </header>
     </>
   );

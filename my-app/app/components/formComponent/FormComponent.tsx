@@ -1,34 +1,35 @@
 'use client';
-import Link from "next/link";  
-import { Button, Form } from "antd"; 
+
+import Link from "next/link";
+
  
  const FormComponent: React.FC= () => {
     const handleClick = (color: string) => {  
         localStorage.setItem("backgroundColor",color);
       };
   return (
-    <Form layout="vertical" className="flex justify-between gap-4">  
-    <Form.Item >  
+    <form  className="flex justify-between gap-4">  
+    
       <Link href="/secendPage" passHref>  
-        <Button type="primary" shape="round" onClick={() => handleClick("yellow")} className="bg-yellow-300 text-lg text-black w-20">  
+        <button  onClick={() => handleClick("yellow")} className="bg-yellow-300 text-lg text-black w-20 rounded-xl h-10 font-bold hover:text-white   shadow-yellow-50 shadow-inner ">  
           Yellow  
-        </Button>  
+        </button>  
       </Link>  
-    </Form.Item>  
-    <Form.Item>  
+      
+    
       <Link href="/secendPage" passHref>  
-        <Button type="primary" shape="round" onClick={() => handleClick("blue")}  className="bg-blue-300 text-lg text-black w-20">  
+        <button  onClick={() => handleClick("blue")}  className="bg-blue-300 text-lg text-black w-20 rounded-xl h-10 font-bold hover:text-white   shadow-blue-50 shadow-inner">  
           Blue  
-        </Button>  
+        </button>  
       </Link>  
-    </Form.Item>  
-    <Form.Item>  
+      
+    
       <Link href="/secendPage" passHref>  
-        <Button type="primary" shape="round" onClick={() => handleClick("red")}  className="bg-red-300 text-lg text-black w-20">  
+        <button  onClick={() => handleClick("red")}  className="bg-red-300 text-lg text-black w-20 rounded-xl h-10 font-bold hover:text-white   shadow-red-50 shadow-inner ">  
           Red  
-        </Button>  
+        </button>  
       </Link>  
-    </Form.Item>  
-  </Form>   )
+      
+  </form>   )
 }
 export default FormComponent
