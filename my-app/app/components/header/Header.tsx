@@ -8,10 +8,13 @@ import { PiUserCircleFill } from "react-icons/pi";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 
 const Header: React.FC = () => {
+  const handeldownload=()=>{
+    console.log("download app")
+  }
   return (
     <>
-      <header className="h-20 z-50 w-full fixed  text-sm border-b-2 shadow-xl flex top-0 right-0 bg-white">
-        <div className=" w-[1400px] mx-24 text-center flex justify-between items-center">
+      <header className="h-20 flex-shrink-0 z-50 w-full fixed  text-sm border-b-2 shadow-xl flex top-0 right-0 bg-white">
+        <div className=" w-[1400px] mx-36 text-center flex justify-between items-center">
           <div className="flex items-center justify-start gap-2 right-0 w-1/7 ">
             <Image
               src={Logo}
@@ -39,8 +42,9 @@ const Header: React.FC = () => {
           </nav>
           <div className="w-1/3 flex items-center justify-start gap-6">
             <Link
+            onClick={()=>handeldownload()}
               href="/downloadapp"
-              className="bg-gray-300 px-4 py-2 rounded-sm flex gap-1 justify-center items-center"
+              className="bg-gray-300 px-4 py-2 hover:bg-blue-800 hover:text-white duration-700 transition-all hover:rounded-full rounded-sm flex gap-1 justify-center items-center"
             >
               <IoCloudDownloadOutline />
               دانلود اپلیکیشن

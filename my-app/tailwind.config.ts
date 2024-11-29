@@ -8,12 +8,26 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      keyframes: {
+        appear: {
+          from: {
+            opacity: "0",
+            scale: "0.5",
+          },
+          to: {
+            opacity: "1",
+            scale: "1",
+          },
+        },
       },
-      
+
+      animation: {
+        appear: 'appear 1s ease-in-out',
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+
+  ],
 } satisfies Config;

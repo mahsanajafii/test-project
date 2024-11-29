@@ -14,28 +14,28 @@ const Banner = () => {
       <div className="bg-white h-16 mt-[-40px]  shadow-[10px_10px_0px_0_rgba(133,180,245,.4)] w-5/6 ">
         <nav className="w-full h-full text-black flex items-center justify-between">
           <Link
-            href="/Introduction"
+            href="/printservices"
             className="w-1/4 flex items-center justify-center gap-2 border-l-2 border-l-gray-400"
           >
             <TiPrinter size={24} />
             انواع چاپ
           </Link>
           <Link
-            href="/prouducts"
+            href="/giftsservices"
             className="w-1/4 flex items-center justify-center gap-4 border-l-2 border-l-gray-400"
           >
             <TbShirt size={24} />
             هدایایی تبلیغاتی{" "}
           </Link>
           <Link
-            href="/contact"
+            href="/designservices"
             className="w-1/4 flex items-center justify-center gap-4 border-l-2 border-l-gray-400"
           >
             <SiAffinitydesigner size={24} />
             طراحی تخصصی
           </Link>
           <Link
-            href="/contact"
+            href="/multimediaservises"
             className="w-1/4 flex items-center justify-center gap-4"
           >
             <PiVideoCameraBold size={24} />
