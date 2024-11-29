@@ -1,7 +1,7 @@
 
 const page = () => {
   return (
-    <div>download app</div>
+     <div className="w-full h-screen text-6xl flex justify-center items-center"> download app</div>
   )
 }
 

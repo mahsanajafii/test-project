@@ -2,15 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   margin: 0;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 0;
   box-sizing: border-box;
   font-family: Iran-Yekan;
-
+  /* background: linear-gradient(45deg,red 40%,transport 40%,ransport 56%, green 56%); */
 }
 @font-face {
-  font-family:Iran-Yekan ;
+  font-family: Iran-Yekan;
   src: url("/fonts/Qs_Iranyekan.woff");
 }

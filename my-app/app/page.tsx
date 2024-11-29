@@ -25,7 +25,7 @@ const Home: React.FC = () => {
   ];
   return (
     <>
-      <main className="flex h-[100vh] flex-col items-center justify-between gap-3">
+      <main className="flex h-fit flex-col items-center justify-between gap-3">
         <Banner />
 
         {informations.map((info) => (

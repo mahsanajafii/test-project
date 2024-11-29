@@ -1,7 +1,7 @@
 
 const page = () => {
   return (
-    <div>contact us</div>
+    <div className="w-full h-screen text-6xl flex justify-center items-center">contact us</div>
   )
 }
 

@@ -1,7 +1,8 @@
 
 const page = () => {
   return (
-      <p >introduction</p>
+    <div className="w-full h-screen text-6xl flex justify-center items-center">
+        introduction</div>
       
   )
 }
