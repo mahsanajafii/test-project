@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  margin: 0;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: border-box;
+  font-family: Iran-Yekan;
 
-button:hover{
-  box-shadow: 2px 2px 2px 2px rgb(233, 6, 6,.4);
-  
+}
+@font-face {
+  font-family:Iran-Yekan ;
+  src: url("/fonts/Qs_Iranyekan.woff");
 }
